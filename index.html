@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projeto Cartao</title>
+        <link rel="stylesheet" href="style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <main>
+            <form action="" method="post" class="cardForm" class="flex">
+                <section class="card" id="credit-card">
+                    <div class="front"></div>
+                    <div class="back"></div>
+                </section>
+                <section>
+                        <div class="form-group flex">
+                            <label class="flex" for="">Número do cartão</label>
+                            <input required type="text" maxlength="19" placeholder="**** **** **** ****" id="numCard">
+                            <div class="warning">
+                                <img src="imgs/Warning.svg" alt="">
+                                <p>Insira um número de cartão válido</p>
+                            </div>
+                        </div>
+                        <div class="form-group flex">
+                            <label class="flex" for="">Nome do titular</label>
+                            <input required type="text" placeholder="Nome como está no cartão" id="holder">
+                            <div class="warning">
+                                <img src="imgs/Warning.svg" alt="">
+                                <p>Nome do titular é obrigatório</p>
+                            </div>
+                        </div>
+                        <div class="form-group flex input-inline">
+                            <div class="validade flex">
+                                <label class="flex" for="">Validade</label>
+                                <input type="text" maxlength="5" placeholder="mm/aa" id="validity">
+                            </div>
+                            <div class="cvv">
+                                <label class="flex" for="">CVV 
+                                    <img src="imgs/Question.svg" 
+                                        alt="icone de ajuda"
+                                        title="Esse número está, geralmente, nas costas do seu cartão"
+                                    ></label>
+                                <input type="text" maxlength="4" placeholder="***" id="cvv">
+                            </div>
+                        </div>
+                        <div class="form-group flex info-security">
+                            <img src="imgs/ShieldCheck.svg" alt="" srcset="">
+                            <h2>Seus dados estão seguros</h2>
+                        </div>
+                        <button type="submit">Adicionar cartão</button>
+                    </form>
+            </section>
+        </main>
+        <script src="https://unpkg.com/imask"></script>
+        <script src="script.js"></script>
+    </body>
+
+</html>
