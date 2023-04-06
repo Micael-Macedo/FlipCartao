@@ -11,6 +11,12 @@
 }
 body{
     background-color: #1F2937;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 .flex{
     display: flex;
@@ -18,24 +24,25 @@ body{
 form{
     margin: auto;
     width: 100%;
+    max-height: 100vh;
     flex-direction: column;
     padding: 2.4rem;
     #credit-card{
+
         margin: auto;
-        width: 32.8rem;
+        width: 100%;
         height: 21.2rem;
         perspective: 60rem;
-        margin-bottom: 4.8rem;
-        &:hover .front , &:active .front{
-            transform: rotateY(180deg);
+        margin-bottom: 3.8rem;
+        &:hover .front, &:active .front{
+            transform: rotateY(180deg) ;
         }
-        &:hover .back , &:active .back{
-            transform: rotateY(0deg);
+        &:hover .back, &:active .back{
+            transform: rotateY(0deg) ;
         }
         & > div{
             width: inherit;
             height: inherit;
-
             position: absolute;
             top: 0;
             left: 0;
@@ -45,15 +52,19 @@ form{
             transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         div.front{
-            background: url(https://i.ibb.co/PYM2J4F/cc-front.png) no-repeat;
+            background: url('imgs/cc-front.png') no-repeat;
+            background-size: contain;
+            background-position: center;
             transform: rotateY(0);
         }
         div.back{
-            background: url(https://i.ibb.co/kDnMdtZ/cc-back.png) no-repeat;
+            background: url('imgs/cc-back.png') no-repeat;
+            background-size: contain;
+            background-position: center;
             transform: rotateY(-180deg);
-            top: -5px;
         }
     }
+
     div.form-group{
         flex-direction: column;
         width: 100%;
@@ -79,16 +90,6 @@ form{
                 width: 35%;
             }
         }
-        &.info-security{
-            margin-top: 4.8rem;
-            margin-bottom: 7.6rem;
-            justify-content: center;
-            flex-direction: row;
-            gap: 0.8rem;
-            img{
-                width: 2rem;
-            }
-        }
         input{
             width: 100%;
             background: #111827;
@@ -97,7 +98,13 @@ form{
             border-radius: .4rem;
             outline: none;
             height: 4.8rem;
+            line-height: 2.4rem;
+            font-size: 1.6rem;
             padding: 1.2rem;
+            &::placeholder{
+                font-weight: 400;
+                color: #9CA3AF;
+            }
             & + .warning{
                 display: none;
                 
@@ -120,6 +127,16 @@ form{
             }
         }
     }
+    section.info-security{
+        margin-top: 4.8rem;
+        margin-bottom: 3rem;
+        justify-content: center;
+        flex-direction: row;
+        gap: 0.8rem;
+        img{
+            width: 2rem;
+        }
+    }
     button{
         width: 100%;
         background-color: #9333EA;
@@ -137,6 +154,54 @@ form{
         transition: background .2s;
         &:hover{
             background: #A855F7;
+        }
+    }
+
+}
+@media (min-width:1024px) {
+    :root{
+        font-size: 85.75%;
+    }
+    #credit-card{
+        grid-area: card;
+        margin-bottom: 1.5rem !important;
+    }
+    #form-input{
+        grid-area: input;
+    }
+    section.info-security{
+        grid-area: security;
+        margin-top: 0rem !important;
+        margin-bottom: 7.6rem;
+        gap: 0.8rem;
+    }
+    .info-security{
+    }
+    #btn-submit{
+        grid-area: submit;
+    }
+    body{
+        background: #1E1E1E;
+        form{
+            width: 73.6rem;
+            display: grid !important; 
+            grid-template-areas:
+            "input card"
+            "input security"
+            "submit submit"
+            ;
+            gap:  0rem 4rem;
+            background: #1F2937;
+            border-radius: .4rem;
+            #credit-card{
+                width: 32rem;
+            }
+            div.front{
+                background-size: 100% !important;
+            }
+            div.back{
+                background-size: 100% !important;
+            }
         }
     }
 }

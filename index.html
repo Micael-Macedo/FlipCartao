@@ -20,45 +20,51 @@
                     <div class="front"></div>
                     <div class="back"></div>
                 </section>
-                <section>
-                        <div class="form-group flex">
-                            <label class="flex" for="">Número do cartão</label>
-                            <input required type="text" maxlength="19" placeholder="**** **** **** ****" id="numCard">
-                            <div class="warning">
-                                <img src="imgs/Warning.svg" alt="">
-                                <p>Insira um número de cartão válido</p>
-                            </div>
+                <section id="form-input">
+                    <div class="form-group flex">
+                        <label class="flex" for="">Número do cartão</label>
+                        <input required type="text" maxlength="19" placeholder="**** **** **** ****" id="numCard">
+                        <div class="warning">
+                            <img src="imgs/Warning.svg" alt="">
+                            <p>Insira um número de cartão válido</p>
                         </div>
-                        <div class="form-group flex">
-                            <label class="flex" for="">Nome do titular</label>
-                            <input required type="text" placeholder="Nome como está no cartão" id="holder">
-                            <div class="warning">
-                                <img src="imgs/Warning.svg" alt="">
-                                <p>Nome do titular é obrigatório</p>
-                            </div>
+                    </div>
+                    <div class="form-group flex">
+                        <label class="flex" for="">Nome do titular</label>
+                        <input required type="text" placeholder="Nome como está no cartão" id="holder">
+                        <div class="warning">
+                            <img src="imgs/Warning.svg" alt="">
+                            <p>Nome do titular é obrigatório</p>
                         </div>
-                        <div class="form-group flex input-inline">
-                            <div class="validade flex">
-                                <label class="flex" for="">Validade</label>
-                                <input type="text" maxlength="5" placeholder="mm/aa" id="validity">
-                            </div>
-                            <div class="cvv">
-                                <label class="flex" for="">CVV 
-                                    <img src="imgs/Question.svg" 
-                                        alt="icone de ajuda"
-                                        title="Esse número está, geralmente, nas costas do seu cartão"
-                                    ></label>
-                                <input type="text" maxlength="4" placeholder="***" id="cvv">
-                            </div>
+                    </div>
+                    <div class="form-group flex input-inline">
+                        <div class="validade flex">
+                            <label class="flex" for="">Validade</label>
+                            <input type="text" maxlength="5" placeholder="mm/aa" id="validity">
                         </div>
-                        <div class="form-group flex info-security">
-                            <img src="imgs/ShieldCheck.svg" alt="" srcset="">
-                            <h2>Seus dados estão seguros</h2>
+                        <div class="cvv">
+                            <label class="flex" for="">CVV
+                                <img src="imgs/Question.svg" alt="icone de ajuda"
+                                    title="Esse número está, geralmente, nas costas do seu cartão"></label>
+                            <input type="text" maxlength="4" placeholder="***" id="cvv">
                         </div>
-                        <button type="submit">Adicionar cartão</button>
-                    </form>
-            </section>
+                    </div>
+                </section>
+                <section class="form-group flex info-security">
+                    <img src="imgs/ShieldCheck.svg" alt="" srcset="">
+                    <h2>Seus dados estão seguros</h2>
+                </section>
+                <button type="submit" id="btn-submit">Adicionar cartão</button>
+            </form>
         </main>
+        <!-- <div class="grid">
+            <div class="card">CARD</div>
+            <div>
+                <div class="form">FORM</div>
+                <div class="seguranca">Segurança</div>
+                <div class="submit">submit</div>
+            </div>
+        </div> -->
         <script src="https://unpkg.com/imask"></script>
         <script src="script.js"></script>
     </body>
